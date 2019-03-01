@@ -59,7 +59,7 @@ Source: R::grDevices::densCols
 ```
 
 ### Result
-![Result](https://raw.githubusercontent.com/AlexanderButyaev/kern_smooth/master/example_density.png)
+![Result](https://raw.githubusercontent.com/AlexanderButyaev/kern_smooth/blob/master/example_density.png) 
 
 ## Author
 Alexander Butyaev
