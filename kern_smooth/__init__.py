@@ -1,1 +1,1 @@
-from kern_smooth import densCols
+from ks import densCols

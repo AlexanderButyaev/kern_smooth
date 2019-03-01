@@ -1,5 +1,10 @@
 from distutils.core import setup
 
+from os import path
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
 setup(
     name='kern-smooth',
     version='1.0.0',
@@ -9,7 +14,9 @@ setup(
     license='MIT',
     author='Alexander Butyaev',
     author_email='alexander.butyaev@mail.mcgill.ca',
-    description='A python implementation of KernSmooth package (https://cran.r-project.org/web/packages/KernSmooth):' + \
-     			'kernel smoothing and density estimation functions based on the book: '+ \
-     			'Wand, M.P. and Jones, M.C. (1995) "Kernel Smoothing".'
+    # description='A python implementation of KernSmooth package (https://cran.r-project.org/web/packages/KernSmooth):' + \
+     			# 'kernel smoothing and density estimation functions based on the book: '+ \
+     			# 'Wand, M.P. and Jones, M.C. (1995) "Kernel Smoothing".'
+    long_description = long_description, 
+    long_description_content_type='text/markdown'
 )

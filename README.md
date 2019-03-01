@@ -1,5 +1,9 @@
 # KernSmooth for Python
-Porting popular R library KernSmooth to python
+Porting popular R library KernSmooth to python.
+
+Functions for Kernel Smoothing and Density Estimation.
+
+Transformed R and Fortran functions into Python(2,3) code.
 
 ## 
 Main function of the module:
@@ -23,6 +27,10 @@ Attention: For return value numpy.nan values are allowed in case of nan / infini
 
 Source: R::grDevices::densCols
 
+## Installation
+```
+pip install kern-smooth
+```
 
 ## Usage
 
