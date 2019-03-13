@@ -1,10 +1,18 @@
 KernSmooth for Python
-=======
+=====================
 Porting popular R library KernSmooth to python.
 
 Functions for Kernel Smoothing and Density Estimation.
 
 Transformed R and Fortran functions into Python(2,3) code.
+
+Installation:
+-------------
+
+.. code:: shell
+
+		pip install kern-smooth
+
 
 Main function of the module:
 ----------------------------
@@ -53,6 +61,7 @@ Generate data for plotting
 
 
 Generate point densities:
+
 .. code:: python
 
     from kern_smooth import densCols
@@ -60,6 +69,7 @@ Generate point densities:
 
 
 Plot the result
+
 .. code:: python
 
     sc = plt.scatter(x, y, c=densities, s=15, edgecolors='none', alpha=0.75, cmap=cm.jet)
