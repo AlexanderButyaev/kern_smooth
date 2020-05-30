@@ -124,7 +124,7 @@ def smoothScatterCalcDensity(x, nbin, bandwidth=None, rangex=None):
         nbin = (nbin[0], nbin[0])
     if len(nbin) != 2 or not(isinstance(nbin[0], numbers.Number) and isinstance(nbin[1], numbers.Number)):
         raise ValueError("'nbin' must be numeric of length 1 or 2")
-    if bandwidth == None:
+    if bandwidth is None:
         # R compatibility
         q_data = mquantiles(x, prob=[0.05, 0.95],
                             alphap=1, betap=1, axis=0).data
