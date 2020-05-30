@@ -45,7 +45,7 @@ def densCols(x, y=None, nbin=128, bandwidth=None):
     colpal = cut(dens, len(dens)).codes
     cols = np.empty(select.shape[0])
     cols.fill(np.nan)
-    cols[select] = colpal / (len(dens) - 1.) if len(dens) > 0 else colpal
+    cols[select] = colpal / (len(dens) - 1.) if len(dens) > 1 else colpal
     return cols
 
 
