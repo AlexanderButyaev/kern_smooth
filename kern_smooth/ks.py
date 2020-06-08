@@ -15,7 +15,7 @@ from scipy.stats.mstats import mquantiles
 from scipy.stats import norm
 
 
-def densCols(x, y=None, nbin=128, bandwidth=None):
+def densCols(x, y=None, nbin=128, bandwidth=None, return_dens_matrix=False):
     '''
     Produces a vector containing numbers which encode the local densities at each point in a scatterplot.
 
@@ -27,6 +27,10 @@ def densCols(x, y=None, nbin=128, bandwidth=None):
     Returns: numpy array with numerical representation (in range [0,1]) of point densities.
     Attention: For return value numpy.nan values are allowed in case of nan / infinite values in original dataset 
     Source: R::grDevices::densCols
+
+    Added functionality: if return_dens_matrix == True returs tuple:
+        1) [as described above]
+        2) density matrix of size nbin (squared)
     '''
     x = x
     y = y if not y is None else x
@@ -46,6 +50,8 @@ def densCols(x, y=None, nbin=128, bandwidth=None):
     cols = np.empty(select.shape[0])
     cols.fill(np.nan)
     cols[select] = colpal / (len(dens) - 1.) if len(dens) > 1 else colpal
+    if return_dens_matrix:
+        return cols, fhat
     return cols
 
 
