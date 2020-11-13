@@ -5,8 +5,12 @@ Functions for Kernel Smoothing and Density Estimation.
 
 Transformed R and Fortran functions into Python(2,3) code.
 
-## 
-Main function of the module:
+## Attention
+
+Please use kern-smooth 1.1.0 or newer.
+Reason: found not needed log10 density transformation.
+
+## Main function of the module:
 
 ```python
 def densCols(x, y=None, nbin=128, bandwidth=None)

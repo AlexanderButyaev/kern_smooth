@@ -7,7 +7,7 @@ with open(path.join(this_directory, 'README'), encoding='utf-8') as f:
 
 setup(
     name='kern-smooth',
-    version='1.0.14',
+    version='1.1.0',
     packages=['kern_smooth'],
     install_requires=['numpy', 'pandas', 'scipy'],
     url='https://github.com/AlexanderButyaev/kern_smooth',

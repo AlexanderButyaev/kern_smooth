@@ -43,7 +43,7 @@ def densCols(x, y=None, nbin=128, bandwidth=None, return_dens_matrix=False):
     # bin  x- and y- values
     xbin = cut(x[:, 0], __mk_breaks(axes[0])).codes
     ybin = cut(x[:, 1], __mk_breaks(axes[1])).codes
-    dens = np.log10(fhat[xbin, ybin])
+    dens = fhat[xbin, ybin]
     dens[np.isnan(dens)] = 0
     # transform densities to colors ()
     colpal = cut(dens, len(dens)).codes
