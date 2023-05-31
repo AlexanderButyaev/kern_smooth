@@ -192,7 +192,7 @@ def bkde2D(x, bandwidth, gridsize=(51, 51), rangex=None):
                        rangex=[[a[0], b[0]], [a[1], b[1]]])
     # Compute kernel weights
     gcounts = gcounts.T
-    L = np.zeros(2, dtype=np.int)
+    L = np.zeros(2, dtype=int)
     kapid = [0, 0]
     for _id in range(2):
         L[_id] = min(math.floor(tau * h[_id] * (M[_id] - 1) /
