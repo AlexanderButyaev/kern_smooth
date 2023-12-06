@@ -1,12 +1,19 @@
 name: Publish Python 🐍 distribution 📦 to PyPI and TestPyPI
 
-on: push
+on:
+  # Save CI by only running this on release branches or tags.
+  push:
+    branches:
+      - master
 
 jobs:
   build:
     name: Build distribution 📦
+    # Build only when [git:build] is present or [git:pypi] is present in the head comment
+    if: |
+      contains(github.event.head_commit.message, '[git:build]') || 
+      contains(github.event.head_commit.message, '[git:pypi]')
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -30,7 +37,10 @@ jobs:
   publish-to-pypi:
     name: >-
       Publish Python 🐍 distribution 📦 to PyPI
-    if: startsWith(github.ref, 'refs/tags/') # only publish to PyPI on tag pushes
+    # Publish to pypi only when [git:publish] is present or [git:pypi] is present in the head comment
+    if: |
+      contains(github.event.head_commit.message, '[git:publish]') || 
+      contains(github.event.head_commit.message, '[git:pypi]')
     needs:
       - build
     runs-on: ubuntu-latest
