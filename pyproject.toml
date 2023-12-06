@@ -1,5 +1,22 @@
-[project]
-version = "1.2.1",
-version_files = [
-    "setup.py",
+[tool.kern-smooth]
+name = "kern-smooth"
+version = "1.2.3"
+dependencies = [
+  "numpy",
+  "pandas",
+  "scipy",
+]
+authors = [
+  {name = "Alexander Butyaev", email = "alexander.butyaev@mail.mcgill.ca"},
+]
+maintainers = [
+  {name = "Alexander Butyaev", email = "alexander.butyaev@mail.mcgill.ca"},
+]
+description = "A python implementation of KernSmooth package (https://cran.r-project.org/web/packages/KernSmooth): kernel smoothing and density estimation functions based on the book: Wand, M.P. and Jones, M.C. (1995) 'Kernel Smoothing'."
+readme = "README.MD"
+license = {file = "LICENSE"}
+keywords = ["statistics", "probability", "KDE", "PDF", "kernel density estimation"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Programming Language :: Python"
 ]
