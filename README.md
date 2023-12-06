@@ -1,4 +1,5 @@
 # KernSmooth for Python
+
 Porting popular R library KernSmooth to python.
 
 Functions for Kernel Smoothing and Density Estimation.
@@ -21,24 +22,28 @@ Produces a vector of numbers which encode the local densities at each point in d
 x, y : 1D numpy array with coordinates of the points density will be estimated on
 
 nbin : [optional] int or [int, int] - number of bins along each axis
-    (in case of single value - [nbin, nbin] will be used). Default value 128.
+(in case of single value - [nbin, nbin] will be used). Default value 128.
 
 bandwidth : [optional] numeric vector (len of 1 or 2) of smoothing bandwidth.
 
 Returns: numpy array with numerical representation (in range [0,1]) of point densities.
 
-Attention: For return value numpy.nan values are allowed in case of nan / infinite values in original dataset 
+Attention: For return value numpy.nan values are allowed in case of nan / infinite values in original dataset
 
 Source: R::grDevices::densCols
 
 ## Installation
+
 ```
 pip install kern-smooth
 ```
 
 ## Usage
 
+Make sure `matplotlib` is installed.
+
 ### Generate data for plotting
+
 ```python
 from matplotlib import pyplot as plt
 from matplotlib import cm
@@ -58,12 +63,14 @@ y = np.hstack([y1,y2])
 ```
 
 ### Generate point densities:
+
 ```python
 from kern_smooth import densCols
 densities = densCols(x, y, nbin = 128)
 ```
 
 ### Plot the result
+
 ```python
 sc = plt.scatter(x, y, c=densities, s=15, edgecolors='none', alpha=0.75, cmap=cm.jet)
 plt.colorbar(sc)
@@ -71,7 +78,9 @@ plt.show()
 ```
 
 ### Result
-![Result](https://github.com/AlexanderButyaev/kern_smooth/blob/master/example_density.png) 
+
+![Result](https://github.com/AlexanderButyaev/kern_smooth/blob/master/example_density.png)
 
 ## Author
+
 Alexander Butyaev

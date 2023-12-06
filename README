@@ -48,7 +48,7 @@ Source: R::grDevices::densCols
 Usage
 -----
 
-Generate data for plotting
+Generate data for plotting (make sure Matplotlib is installed)
 
 .. code:: python
 
